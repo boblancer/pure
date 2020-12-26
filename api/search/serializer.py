@@ -35,5 +35,6 @@ class BookSerializer(serializers.ModelSerializer):
                 "in_stock",
                 "url",
                 "associates",
-                "genre"]
+                "genre",
+                "rating"]
         depth = 2

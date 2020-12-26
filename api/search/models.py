@@ -19,6 +19,7 @@ class Book(models.Model):
     associates = models.ManyToManyField(Person, through="AssociatedPerson")
     url = models.CharField(max_length=100)
     genre = models.ManyToManyField("Genre", related_name="books")
+    rating = models.FloatField()
     created_at = models.DateTimeField(auto_now_add=True, null=True)
     updated_at = models.DateTimeField(auto_now=True, null=True)
 

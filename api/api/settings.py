@@ -24,7 +24,7 @@ SECRET_KEY = 'jpps3-0g+g!#uj&tsruw(1l5ktvs@65b8bjeb9xf!07i0qwjii'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
+  
 ALLOWED_HOSTS = []
 
 

@@ -7,7 +7,7 @@ from rest_framework.response import Response
 from django.core import serializers
 from django.http import JsonResponse
 
-
+from django.db import connection
 # Create your views here.
 def index(request):
     return HttpResponse("Hello, world. You're at the polls index.")
@@ -24,10 +24,13 @@ class BookView(mixins.ListModelMixin,
     def list(self, request, format=None):
         print(request.query_params)
         print("get route")
-        b = Book.objects.all().order_by('id')
+        # b = Book.objects.all().order_by('id').prefetch_related("associates")
+        b = Book.objects.all().order_by('id').prefetch_related("associates").prefetch_related("genre")
         res = []
         for i in b:
             res.append(self.serializer_class(i).data)
+        for q in connection.queries:
+            print(q)
         return  JsonResponse(res, safe=False)
 
 
