@@ -32,7 +32,7 @@ class BookSerializer(serializers.ModelSerializer):
                 "language",
                 "release",
                 "created_at",
-                "in_stock",
+                "subscriber",
                 "url",
                 "associates",
                 "genre",

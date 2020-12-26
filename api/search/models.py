@@ -15,7 +15,7 @@ class Book(models.Model):
     description = models.CharField(max_length=30)
     language = models.CharField(max_length=30)
     release = models.DateTimeField()
-    in_stock = models.IntegerField()
+    subscriber = models.IntegerField()
     associates = models.ManyToManyField(Person, through="AssociatedPerson")
     url = models.CharField(max_length=100)
     genre = models.ManyToManyField("Genre", related_name="books")
